@@ -25,4 +25,33 @@
 
 <br/>
 
+# Date Time Function 
 
+![date-time-function](./img/date.png)
+
+## Returning The Current Date And Time 
+| Function | Description | 
+| :--- | :--- | 
+| CURRENT_TIMESTAMP |  Returns the current system date and time without the time zone part. It takes no argument [SELECT CURRENT_TIMESTAMP AS current_date_time;] | 
+| GETUTCDATE | Returns a date part of a date as an integer number.
+GETUTCDATE() | 
+| GETDATE | Returns the current system date and time of the operating system on which the SQL Server is running. SELECT     GETDATE() current_date_time; | 
+| SYSDATETIME | Returns the current system date and time with more fractional seconds precision than the GETDATE() function. | 
+| SYSUTCDATETIME |  Returns the current system date and time in UTC time | 
+| SYSDATETIMEOFFSET | Returns the current system date and time with the time zone.  SELECT     SYSDATETIMEOFFSET() [datetimeoffset with timezone]; 2019-05-03 08:56:48.0645108 +07:00 | 
+
+
+## Returning Date And Time Parts 
+| Function | Description | 
+| :--- | :--- | 
+| DATENAME | Returns a date part of a date as a character string. It is similar to the datepart but only difference is it returns a string where are datepart returns an integer number. <br/> **SYNTAX** : DATENAME(date_part,input_date) There are multiple possible values for date_part which can be looked up online. <br/> **SELECT** DATENAME(year, '2018-05-10') as [datename]; | 
+| DATEPART | Returns a date part of a date as an integer number |
+| DAY | Returns the day of a specified date as an integer | 
+| MONTH | Returns the month of a specified date as an integer | 
+| YEAR | Returns the year of the date as an integer. | 
+
+
+## Returning Difference Between 2 dates 
+| Function | Description | 
+| :--- | :--- | 
+| DATEDIFF | Returns a difference in date part between two dates. <br/>**SYNTAX** :    DATEDIFF( date_part , start_date , end_date) Date_part is in which output format we want to find difference in like year month, quarter etc i.e difference in terms of months, days, years or quarter etc | 
