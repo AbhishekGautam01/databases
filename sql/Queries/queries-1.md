@@ -119,3 +119,36 @@ WHEN id%2 =0 then lag(student_name) over(order by id) end as new_student_name
 FROM 
     Students
 ```
+
+## Generate Unique Number for each row
+```
+SELECT ROW_NUMBER() OVER (ORDER BY CustomerName) as OrderNumber, 
+       CustomerName, 
+       ProductName, 
+       Amount, 
+       VendorName
+FROM   
+    Sales
+```
+
+## Generate a Unique NUmber as per vendor 
+
+```
+SELECT 
+    ROW_NUMBER() OVER (PARITION BY VendorName ORDER BY CustomerName) as Num 
+    CustomerName, 
+    ProductName, 
+    Amount, 
+    VendorName 
+FROM 
+    Sales 
+
+```
+## Generate Same Number for Same Customer : Using Rank 
+```
+SELECT 
+    RANK() Over (order by CustomerName) as CustomerName, 
+FROM Sales
+```
+
+## 
